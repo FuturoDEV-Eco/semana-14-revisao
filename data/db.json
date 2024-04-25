@@ -1,0 +1,41 @@
+{
+  "usuarios": [
+    {
+      "id": 2,
+      "nome": "Felipe",
+      "email": "felipe@email.com",
+      "senha": 123456
+    },
+    {
+      "id": 3,
+      "nome": "Renata",
+      "email": "renata@email.com",
+      "senha": 123456
+    },
+    {
+      "nome": "matheus",
+      "email": "matheus@email.com",
+      "senha": "123456",
+      "id": 4
+    },
+    {
+      "nome": "andre",
+      "email": "andre@email.com",
+      "senha": "123456",
+      "id": 5
+    },
+    {
+      "nome": "bruno",
+      "email": "bruno@email.com",
+      "senha": "123456",
+      "id": 65
+    },
+    {
+      "nome": "deyse",
+      "email": "deyse@email.com",
+      "senha": "123456",
+      "id": 66
+    }
+  ],
+  "locaisColeta": []
+}
