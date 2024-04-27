@@ -24,6 +24,39 @@ export const UsuariosContextProvider = ({children}) => {
     .catch(erro => console.log(erro))
   }
 
+  async function login(email, senha){
+    try {
+      debugger
+      const response = await fetch("http://localhost:3000/usuarios")
+      const dados = await response.json()
+
+      let usuarioExiste = false
+
+      dados.map(usuario => {
+        debugger
+        if(usuario.email == email){
+          usuarioExiste = true
+          if(usuario.senha == senha){
+            localStorage.setItem("isAutenticado", true)
+            window.location.href = "/"
+            return
+          }
+
+          alert("Senha incorreta!")
+          return
+        }
+
+      })
+
+      if(!usuarioExiste){
+        alert("Não existe um usuário com esse email!")
+      }
+
+    } catch {
+
+    }
+  }
+
   function cadastrarUsuario(usuario){
     if(usuario.nome == ""){
       alert("O usuário precisa ter um nome!")
@@ -74,7 +107,7 @@ export const UsuariosContextProvider = ({children}) => {
   }
 
   return (
-    <UsuariosContext.Provider value={{usuarios, cadastrarUsuario, removerUsuario, editarUsuario, getUsuarioPorId}}>
+    <UsuariosContext.Provider value={{usuarios, login, cadastrarUsuario, removerUsuario, editarUsuario, getUsuarioPorId}}>
       {children}
     </UsuariosContext.Provider>
   )
